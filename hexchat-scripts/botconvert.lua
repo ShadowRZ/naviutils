@@ -15,7 +15,7 @@ for bot in string.gmatch(saved_bots, '[^,]+') do
 end
 
 -- Converting function
-local re = "%[(..-)%] (.*)"
+local re = "^%[(..-)%] (.*)"
 local matched = false
 local function botconvert_cb(event, word)
     if matched then
@@ -82,6 +82,8 @@ end
 -- Setup print hook
 hexchat.hook_print("Channel Message", function(word) return botconvert_cb("Channel Message", word) end)
 hexchat.hook_print("Channel Msg Hilight", function(word) return botconvert_cb("Channel Msg Hilight", word) end)
+hexchat.hook_print("Channel Action", function(word) return botconvert_cb("Channel Action", word) end)
+hexchat.hook_print("Channel Action Hilight", function(word) return botconvert_cb("Channel Action Hilight", word) end)
 
 -- Command hook
 hexchat.hook_command("BOTCONVERT", cmd_botconvert_cb, help)
