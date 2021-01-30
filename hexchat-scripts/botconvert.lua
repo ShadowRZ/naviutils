@@ -1,4 +1,6 @@
--- SPDX-License-Identifier: GPL-3.0-or-later -*- Lua -*-
+-- -*- Lua -*-
+-- SPDX-License-Identifier: GPL-3.0-or-later
+-- SPDX-FileCopyrightText: 2020-2021 雨宫恋叶
 
 local name = "botconvert.lua"
 local ver = "0.1"
